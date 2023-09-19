@@ -10,7 +10,7 @@ class EndpointSerializer(serializers.ModelSerializer):
         read_only_fields = ("id", "name", "owner", "created_at")
         fields = read_only_fields
 
-class MLAlgorithmSerializer(serializers.ModelField):
+class MLAlgorithmSerializer(serializers.ModelSerializer):
     current_status = serializers.SerializerMethodField(read_only=True)
 
     def get_current_status(self, mlalgorithm):
